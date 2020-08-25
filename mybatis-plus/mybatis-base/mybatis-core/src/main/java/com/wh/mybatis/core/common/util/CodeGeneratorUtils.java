@@ -51,7 +51,8 @@ public class CodeGeneratorUtils {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
+        String baseUrl = System.getProperty("user.dir");
+        String projectPath = baseUrl.replaceAll("\\\\", "/") + "/mybatis-main/";
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("wh");
         gc.setBaseResultMap(true);
